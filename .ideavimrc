@@ -1,0 +1,74 @@
+" Use relative line numbers with absolute line number on current line
+set relativenumber
+
+" Set the leader key to space
+let mapleader = " "
+
+" Plugins (and features)
+set sneak
+set surround
+set multiple-cursors
+set ideajoin
+set NERDTree
+set easymotion
+set ideamarks
+set incsearch
+set which-key
+set highlightedyank
+set showmode
+set showcmd
+set smartcase                  " Use case-insensitive matching unless a capital letter is present
+
+" Exit insert mode by typing 'jk'
+:imap jk <Esc>
+
+" Disable the timeout
+set notimeout
+
+" Single leader key for for easymotion
+set <Leader> <Plug>(easymotion-prefix)
+
+" Leader shortcuts
+:map <leader>o <Action>(OptimizeImports)
+:map <leader>g <Action>(GotoFile)
+:map <leader>b <Action>(GotoDeclaration)
+:map <leader>/ <Action>(CommentByLineComment)
+:map <leader>p <Action>(Run)
+:map <leader>s <Action>(FindInPath)
+:map <leader>t <Action>(ActivateTerminalToolWindow)
+:map <leader>e <Action>(ActivateProjectToolWindow)
+:map <leader>r <Action>(RenameElement)
+:map <leader>q <Action>(CloseEditor)
+:map <leader>w <Action>(ReopenClosedTab)
+:map <leader>i <Action>(ImplementMethods)
+:map <leader>c <Esc>
+
+" Leader names
+let g:WhichKeyDesc_optimize_imports = '<leader>o Optimize Imports'
+let g:WhichKeyDesc_goto_file = '<leader>g Goto File'
+let g:WhichKeyDesc_goto_declaration = '<leader>b Goto Declaration'
+let g:WhichKeyDesc_comment_line = '<leader>/ Comment Line'
+let g:WhichKeyDesc_run = '<leader>p Run'
+let g:WhichKeyDesc_find_everywhere = '<leader>s Search'
+let g:WhichKeyDesc_terminal = '<leader>t Terminal'
+let g:WhichKeyDesc_explorer = '<leader>e Explorer'
+let g:WhichKeyDesc_rename = '<leader>r Rename'
+let g:WhichKeyDesc_close = '<leader>q Close'
+let g:WhichKeyDesc_reopen = '<leader>w Reopen'
+let g:WhichKeyDesc_implement_methods = '<leader>i Implement Methods'
+let g:WhichKeyDesc_cancel = '<leader>c Cancel'
+
+" Black hole deleted lines
+nnoremap d "_d
+nnoremap dd "_dd
+
+" Show a few lines of context around the cursor
+set scrolloff=5
+
+" Make the home and end keys go to the first non-whitespace character in normal and insert mode
+:map <Home> ^
+:imap <Home> <Esc>^i
+
+" Use these for beginning and end of line
+nmap H ^
+nmap L $
